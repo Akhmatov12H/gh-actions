@@ -1,11 +1,13 @@
 name: Testing my script
+
 on: push
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-#    - name: Get repository code
-#      uses: actions/checkout@v3
-    - name: Run my Script
-      uses: bash ../script.sh
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run my Script
+        run: bash ./script.sh
